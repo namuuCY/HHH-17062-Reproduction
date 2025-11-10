@@ -8,7 +8,7 @@ This is a minimal reproduction project for the unnecessary ALTER TABLE bug relat
 
 When using `spring.jpa.hibernate.ddl-auto=update`, Hibernate generates `ALTER TABLE` statements for `enum` and `mediumtext` columns on every application start, even when the entity model has not changed.
 
-- Hibernate 6.2.7.Final: Bug occurs for both enum and mediumtext.
+- Hibernate 6.2.6.Final, 6.2.7.Final: Bug occurs for both enum and mediumtext.
 - Hibernate 6.5.3.Final: Bug occurs for mediumtext.
 - Hibernate 6.6.33.Final: Bug is resolved.
 
@@ -31,11 +31,10 @@ In the `build.gradle` file, uncomment the Hibernate version you wish to test wit
 
 **Example: Testing 6.5.3.Final**
 ```
-ext {
-    // 'hibernate.version' = '6.2.7.Final'
-    'hibernate.version' = '6.5.3.Final' // <-- Test this version
-    // 'hibernate.version' = '6.6.33.Final'
-}
+//ext['hibernate.version'] = '6.2.6.Final'
+ext['hibernate.version'] = '6.2.7.Final' // <- test this version
+//ext['hibernate.version'] = '6.5.3.Final'
+//ext['hibernate.version'] = '6.6.33.Final'
 ```
 
 ## 3. Run the Application
@@ -54,7 +53,7 @@ you will see the unnecessary `ALTER TABLE ... modify column ... enum`,
 ![image_on_6.2.6.Final](docs/image_6_2_6_Final.png)
 
 
-Check the console log when the application starts. If you selected `6.2.6.Final` in `build.gradle`,
+Check the console log when the application starts. If you selected `6.2.7.Final` in `build.gradle`,
 you will see the unnecessary `ALTER TABLE ... modify column ... enum`,
 `ALTER TABLE ... modify column ... mediumtext` log printed to the console.
 ![image_on_6.2.7.Final](docs/image_6_2_7_Final.png)
