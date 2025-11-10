@@ -47,8 +47,25 @@ Run the application from your terminal:
 
 ## 4. Confirm the Bug (Screenshot)
 
+
+Check the console log when the application starts. If you selected `6.2.6.Final` in `build.gradle`,
+you will see the unnecessary `ALTER TABLE ... modify column ... enum`, 
+`ALTER TABLE ... modify column ... mediumtext` log printed to the console.
+![image_on_6.2.6.Final](docs/image_6_2_6_Final.png)
+
+
+Check the console log when the application starts. If you selected `6.2.6.Final` in `build.gradle`,
+you will see the unnecessary `ALTER TABLE ... modify column ... enum`,
+`ALTER TABLE ... modify column ... mediumtext` log printed to the console.
+![image_on_6.2.7.Final](docs/image_6_2_7_Final.png)
+
+
 Check the console log when the application starts. If you selected `6.5.3.Final` in `build.gradle`, 
 you will see the unnecessary `ALTER TABLE ... modify column ... mediumtext` log printed to the console.
-![image_on_6.5.3.Final](docs/image.png)
+![image_on_6.5.3.Final](docs/image_6_5_3_Final.png)
+
+
 You can confirm that the same `ALTER TABLE` log is printed every time you restart the application (after terminating with `Ctrl+C`).
 If you change the version to `6.6.33.Final` in `build.gradle` and re-run, this log will disappear.
+![image_one_6.6.33.Final](docs/image_6_6_33_Final.png)
+

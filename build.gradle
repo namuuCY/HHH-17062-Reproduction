@@ -14,8 +14,9 @@ java {
 	}
 }
 
-//ext['hibernate.version'] = '6.2.7.Final'
-ext['hibernate.version'] = '6.5.3.Final'
+//ext['hibernate.version'] = '6.2.6.Final'
+ext['hibernate.version'] = '6.2.7.Final'
+//ext['hibernate.version'] = '6.5.3.Final'
 //ext['hibernate.version'] = '6.6.33.Final'
 
 configurations {
