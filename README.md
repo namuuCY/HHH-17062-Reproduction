@@ -29,7 +29,7 @@ CREATE DATABASE hibernate_bug_demo;
 
 In the `build.gradle` file, uncomment the Hibernate version you wish to test within the ext block.
 
-**Example: Testing 6.5.3.Final**
+**Example: Testing 6.2.7.Final**
 ```
 //ext['hibernate.version'] = '6.2.6.Final'
 ext['hibernate.version'] = '6.2.7.Final' // <- test this version
